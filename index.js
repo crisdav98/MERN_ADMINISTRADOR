@@ -13,13 +13,13 @@ server.use(cors());
 // Habilitar express.json
 server.use(express.json({extended: true}));
 // Puerto del servidor
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 //Importar Rutas
 server.use('/api/usuarios', require('./routes/usuarios'));
 server.use('/api/auth', require('./routes/auth'));
 server.use('/api/proyectos', require('./routes/proyectos'));
 server.use('/api/tareas', require('./routes/tareas'));
 // Arrancar el servidor
-server.listen(PORT, ()=>{
+server.listen(port, '0.0.0.0', ()=>{
     console.log(`El servidor esta funcionando en el puerto ${PORT}`);
 })
